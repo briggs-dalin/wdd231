@@ -1,11 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 231 - Dalin Briggs</title>
-</head>
-<body>
+    <meta name="description" content="Home page">
+    <meta name="author" content="Dalin Briggs">
     
+
+    <title>Home | Dalin Briggs</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/base-smaller.css">
+    <link rel="stylesheet" href="styles/base-larger.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    
+<script src="scripts/main.js" defer></script>
+<script src="scripts/courses.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="content">
+            <img class="profile" src="images/Family-Picture.jpeg" alt="Dalin Briggs photo">
+        </div>
+        <h1>Dalin Briggs</h1>
+        <button id="menu" title="Menu"></button>
+    </header>
+    <nav>
+        <ul>
+            <li><a class="active" href="/index.html">Home</a></li>
+            <li><a href="https://github.com/briggs-dalin" target="_blank">GitHub Profile</a></li>
+            <li><a href="https://www.linkedin.com/in/dalin-briggs-345bb6198/" target="_blank">LinkedIn Profile</a></li>
+            <li><a href="/" target="_blank">Chamber</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="courseWork-box">
+            <h2>Course Work</h2>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </section>
+        <section class="state-box">
+            <h2>Idaho</h2>
+            <picture>
+                <source media="(min-width: 768px)" srcset="images/Tetons.jpg">
+                <source media="(min-width: 1024px)" srcset="images/Tetons.jpg">
+
+                <img src="images/Tetons.jpg" alt="Tetons" width="300" height="225">
+            </picture>
+            <p>Teton Mountains</p>
+        </section>
+        <section class="certificate-box">
+            <h2>Web and Computer Programming certificate</h2>
+            <div class="boxButton">
+                <button class="courseButton" value="all" title="Filter button">All</button>
+                <button class="courseButton" value="cse" title="Filter button">CSE</button>
+                <button class="courseButton" value="wdd" title="Filter button">WDD</button>
+            </div>
+            <div class="boxcertificate01 boxCourse"></div>
+            <dialog id="courses-details"></dialog>
+            <p id="totalCreditsCert01">Total Credits for Certificate 1: 0</p>
+            
+        </section>
+
+    </main>
+    <footer>
+        <p>&copy;<span id="currentyear">Lorem</span> Dalin Briggs |
+            Idaho</p>
+        <p id="lastModified">Lorem ipsum</p>
+        
+    </footer>
 </body>
+
 </html>
