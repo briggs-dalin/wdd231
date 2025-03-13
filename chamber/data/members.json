@@ -1,0 +1,81 @@
+[
+    {
+        "Name": "D.L. Evans Bank",
+        "Industry": "Banking",
+        "Physical Address": "P.O. Box 1050, Burley, ID 83318",
+        "Website": "https://www.dlevans.com/",
+        "Phone": "208-678-5701",
+        "Representative": "David L. Christensen / President & CEO",
+        "Member Since": "01/17/2019",
+        "Membership": "Gold",
+        "logo": "images/logos/dl_evans_bank.png"
+        
+    },
+    {
+        "Name": "Idacorp",
+        "Industry": "Energy",
+        "Physical Address": "1221 W. Idaho St., Boise, ID 83702",
+        "Website": "https://www.idacorpinc.com/",
+        "Phone": "208-388-2200",
+        "Representative": "Lisa Grow / President & CEO",
+        "Member Since": "03/10/2020",
+        "Membership": "Gold",
+        "logo":"images/logos/idacorp.jpg"
+    },
+    {
+        "Name": "Intermountain Gas Company",
+        "Industry": "Energy",
+        "Physical Address": "555 S. Cole Rd., Boise, ID 83709",
+        "Website": "https://www.intgas.com/",
+        "Phone": "208-377-6840",
+        "Representative": "Scott Madison / President",
+        "Member Since": "08/12/2021",
+        "Membership": "Silver",
+        "logo":"images/logos/intermountain_gas_company.png"
+    },
+    {
+        "Name": "Quest Aircraft",
+        "Industry": "Aerospace",
+        "Physical Address": "1200 Turbine Dr., Sandpoint, ID 83864",
+        "Website": "https://www.questaircraft.com/",
+        "Phone": "208-263-1111",
+        "Representative": "Robert Wells / CEO",
+        "Member Since": "06/17/2024",
+        "Membership": "Bronze",
+        "logo":"images/logos/quest_aircraft.png"
+    },
+    {
+        "Name": "Winco Foods",
+        "Industry": "Retail",
+        "Physical Address": "650 N. Armstrong Pl., Boise, ID 83704",
+        "Website": "https://www.wincofoods.com/",
+        "Phone": "208-377-0111",
+        "Representative": "Steven Goddard / CEO",
+        "Member Since": "09/01/2023",
+        "Membership": "Bronze",
+        "logo":"images/logos/winco_foods.png"
+    },
+    {
+        "Name": "Simplot",
+        "Industry": "Agriculture",
+        "Physical Address": "999 Main St., Boise, ID 83702",
+        "Website": "https://www.simplot.com/",
+        "Phone": "208-336-2110",
+        "Representative": "Garrett Lofto / President & CEO",
+        "Member Since": "12/01/2022",
+        "Membership": "Silver",  
+        "logo": "images/logos/simplot.png"
+    },
+    {
+        "Name": "Micron Technology",
+        "Industry": "Technology",
+        "Physical Address": "8000 S. Federal Way, Boise, ID 83716",
+        "Website": "https://www.micron.com/",
+        "Phone": "208-368-4000",
+        "Representative": "Sanjay Mehrotra / President & CEO",
+        "Member Since": "02/14/2021",
+        "Membership": "Gold",
+        "logo":"images/logos/micron.png"
+    }
+]
+    
