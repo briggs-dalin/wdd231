@@ -1,3 +1,8 @@
+header, h2, footer{
+    padding: 0 20px; /* Adds padding to the left and right sides of the header */
+}
+
+
 /* General Styles */
 body {
     font-family: 'Poppins', sans-serif;
@@ -21,6 +26,47 @@ body {
     gap: 1rem;
 }
 
+.grid-view ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#menu {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+nav ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+    display: flex; 
+    gap: 1rem; 
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none; 
+    color: #333; 
+    padding: 10px 15px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    font-size:17px;
+    background-color: #e6f2ff;
+    
+}
+
+nav ul li a:hover {
+    color: #007BFF; 
+}
+
+
 .card-box {
     border: 1px solid #ddd;
     padding: 1rem;
@@ -36,7 +82,7 @@ body {
     border-radius: 5px;
 }
 
-/* List View Styles */
+
 .list-view table {
     width: 100%;
     border-collapse: collapse;
@@ -63,6 +109,7 @@ body {
     justify-content: center;
     gap: 0.5rem;
     margin-bottom: 1rem;
+    list-style:none;
 }
 
 .mybtn {
@@ -84,11 +131,16 @@ footer{
     background-color: #e6f2ff;
     border-radius: 20px;
     text-align: center;
-    font-size:25px;
+    font-size:20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+
+
 /* Responsive Adjustments */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .grid-view {
         grid-template-columns: 1fr;
     }
@@ -97,4 +149,13 @@ footer{
         display: block;
         overflow-x: auto;
     }
+}
+
+.list-view .card-box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.list-view .card-box img {
+    width: 80px;
 }
