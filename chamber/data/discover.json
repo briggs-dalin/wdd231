@@ -1,0 +1,14 @@
+[
+    {
+        "image": "business-event.webp",
+        "description": "Business Event"
+    },
+    {
+        "image": "sell-event.webp",
+        "description": "Sell Event"
+    },
+    {
+        "image": "economic-event.webp",
+        "description": "Economic Event"
+    }
+]

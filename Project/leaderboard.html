@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Game | Leaderboard">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://briggs-dalin.github.io/WDD-231/chamber/images/idaho_commerce.png">
+       
+    <meta property="og:url" content="https://briggs-dalin.github.io/wdd231/chamber/directory.html">
+    <meta property="og:description" content="Gamer Leaderboard, Join us to get more information">
+    <meta property="fb:app_id" content="your-app-id-here">
+
+    <title>Game Leaderboard</title>
+    <meta name="description" content="Game Leaderboard" />
+    <meta name="author" content="Dalin Briggs" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;700&display=swap" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;700&display=swap">
+    <link rel="icon" href="images/favicon.ico" sizes="48x48" type="image/ico">
+
+    <link rel="stylesheet" href="styles/global.css">
+</head>
+<body>
+    <h1>Game Leaderboard</h1>
+
+    <!-- Form to submit scores -->
+    <form id="score-form">
+        <input type="text" id="player" placeholder="Your Name" required />
+        <input type="number" id="score" placeholder="Your Score" required />
+        <button type="submit">Submit Score</button>
+    </form>
+
+    <!-- Leaderboard display -->
+    <div id="leaderboard">
+        <h2>Leaderboard</h2>
+        <ul id="leaderboard-list"></ul>
+    </div>
+
+    <script>
+        // Function to submit score to backend
+        document.getElementById('score-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const player = document.getElementById('player').value;
+            const score = document.getElementById('score').value;
+
+            try {
+                const response = await fetch('http://localhost:3000/add-score', {  // Make sure this points to the correct backend URL
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ player, score }),
+                });
+                const data = await response.json();
+                alert(data.message || 'Score added successfully!');
+                fetchLeaderboard(); // Refresh leaderboard after submitting score
+            } catch (error) {
+                alert('Error adding score');
+            }
+        });
+
+        
+       // Function to fetch leaderboard data
+const fetchLeaderboard = async () => {
+    try {
+        const response = await fetch('http://localhost:3000/leaderboard');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        
+        // Log the full data structure to confirm it's as expected
+        console.log(data);
+
+        // Access the leaderboard entries from the correct structure
+        const leaderboardEntries = data.dreamlo.leaderboard.entry;
+
+        const leaderboardList = document.getElementById('leaderboard-list');
+        leaderboardList.innerHTML = '';  
+        
+        // Check if there are any leaderboard entries
+        if (leaderboardEntries && leaderboardEntries.length > 0) {
+            leaderboardEntries.forEach((entry) => {
+                const li = document.createElement('li');
+                li.classList.add('leaderboard-item');
+                li.textContent = `${entry.name}: ${entry.score}`; 
+                leaderboardList.appendChild(li);
+            });
+        } else {
+            leaderboardList.innerHTML = 'No leaderboard data available.';
+        }
+    } catch (error) {
+        alert('Error fetching leaderboard');
+        console.error('Error fetching leaderboard:', error);
+    }
+};
+
+
+</script>
+</body>
+</html>
