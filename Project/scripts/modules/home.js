@@ -45,3 +45,13 @@ document.getElementById('menu-toggle').addEventListener('click', () => {
     });
 });
 
+const quotes = [
+    "Victory is earned, not given.",
+    "Keep grinding. Legends are built, not born.",
+    "Only the best make it to the top.",
+    "Play hard. Play fair.",
+    "Every click counts."
+];
+
+document.getElementById('random-quote').textContent =
+    quotes[Math.floor(Math.random() * quotes.length)];
