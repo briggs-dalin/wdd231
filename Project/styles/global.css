@@ -1,4 +1,3 @@
-/* Global Styles */
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #121212;
@@ -6,23 +5,26 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
 h1, h2 {
     font-family: 'Orbitron', sans-serif;
-    color: #00ff00; /* Neon Green */
+    color: #00ff00; 
 }
 
 a {
     text-decoration: none;
-    color: #00bfff; /* Electric Blue */
+    color: #00bfff; 
 }
 
 a:hover {
-    color: #ff6347; /* Tomato Red */
+    color: #ff6347; 
 }
 
-/* Header */
+
 header {
     background-color: #1c1c1c;
     padding: 20px;
@@ -34,7 +36,7 @@ header h1 {
     font-size: 2.5em;
 }
 
-/* Form Styles */
+
 #score-form {
     display: flex;
     justify-content: center;
@@ -43,6 +45,7 @@ header h1 {
 }
 
 #score-form input, #score-form button {
+    display: flex;
     padding: 10px 20px;
     font-size: 1.1em;
     border-radius: 5px;
@@ -55,20 +58,20 @@ header h1 {
 }
 
 #score-form button {
-    background-color: #00ff00; /* Neon Green */
+    background-color: #00ff00; 
     color: #000;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 #score-form button:hover {
-    background-color: #00b33c; /* Darker Green */
+    background-color: #00b33c; 
 }
 
-/* Leaderboard Styles */
+
 #leaderboard {
     text-align: center;
-    margin: 30px 0;
+    margin: 20px 0;
 }
 
 #leaderboard ul {
@@ -86,30 +89,224 @@ header h1 {
 }
 
 #leaderboard .leaderboard-item:hover {
-    transform: scale(1.05);
+    transform: scale(.95);
 }
 
-.delete-btn {
-    background-color: #ff6347; /* Tomato Red */
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    border: none;
-    transition: background-color 0.3s;
-}
 
-.delete-btn:hover {
-    background-color: #b82d18; /* Darker Red */
-}
-
-/* Footer */
 footer {
     background-color: #1c1c1c;
     color: #e0e0e0;
-    padding: 10px;
+    padding-bottom:10px;
     text-align: center;
-    position: fixed;
-    bottom: 0;
     width: 100%;
+   
+    margin-top: auto; 
+}
+
+.main-container {
+    flex: 1; /* This ensures the main content takes up the available space */
+}
+
+@media (max-width: 768px) {
+    #score-form {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    #score-form input,
+    #score-form button {
+      width: 100%;
+      max-width: 300px;
+    }
+  
+    #leaderboard .leaderboard-item {
+      font-size: 1em;
+      margin: 8px;
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1a;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #00ff00;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links li a {
+    color: #00ff41;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #ff6347;
+}
+
+
+.nav-links li a.active {
+    font-weight: bold;
+    color: #facc15; 
+    text-decoration: underline;
+}
+
+.nav-links li a {
+    color: #00ff41; 
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #00ffcc; 
+    text-decoration: underline;
+    text-shadow: 0 0 10px #00ff00;
+}
+
+
+#menu-toggle {
+    display: none;
+    background: none;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        background-color: #1a1a1a;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        display: none;
+        padding: 1rem;
+    }
+
+    .nav-links.open {
+        display: flex;
+        z-index: 1000;
+        margin-top: 30px;
+    }
+
+    #menu-toggle {
+        display: block;
+    }
+}
+
+a, button, .leaderboard-item {
+    transition: all 0.3s ease;
+}
+
+.cta-button,
+#score-form button {
+    position: relative;
+    background-color: #00ff00;
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 25px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1;
+    overflow: hidden;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+}
+
+.cta-button::before,
+#score-form button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 255, 0, 0.5) 0%, transparent 80%);
+    animation: glow-pulse 2s infinite ease-in-out;
+    z-index: -1;
+}
+
+@keyframes glow-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.3;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+}
+
+.cta-button:hover,
+#score-form button:hover {
+    background-color: #00b33c;
+    box-shadow: 0 0 15px #00ff00, 0 0 30px #00ff00;
+}
+
+.hero {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.hero img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 20px;
+    margin-top: 1rem;
+}
+
+.leaderboard {
+    background-color: #1a1a1a;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);
+}
+
+.leaderboard h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+#top-players {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+}
+
+#top-players-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.top-player {
+    font-size: 1.5em;
+    color: #00ff00;
+    margin: 10px 0;
+}
+
+.top-player:hover {
+    color: #ff6347;
+    cursor: pointer;
 }

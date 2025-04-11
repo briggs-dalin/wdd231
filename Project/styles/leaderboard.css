@@ -1,0 +1,95 @@
+/* leaderboard.css */
+
+.leaderboard {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  #leaderboard-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .leaderboard-item {
+    background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+    border: 2px solid #00ff66;
+    border-left-width: 8px;
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    margin: 1rem 0;
+    font-size: 1.25rem;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+    color: #ccffcc;
+    box-shadow: 0 0 12px rgba(0, 255, 100, 0.4);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.leaderboard-item:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 0 18px rgba(0, 255, 100, 0.6), 0 0 30px rgba(255, 255, 150, 0.2);
+    background: linear-gradient(135deg, #2d2d2d, #3d3d3d);
+    color: #ffffff;
+}
+
+.leaderboard-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255,255,150,0.15), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    50% { left: 100%; }
+    100% { left: 100%; }
+}
+
+
+  .cta-to-play {
+    text-align: center;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #1e1e2f;
+    border-radius: 16px;
+    color: #fff;
+    max-width: 500px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+.cta-to-play h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.cta-to-play p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.play-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #facc15;
+    color: #111;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.play-button:hover {
+    background-color: #f59e0b;
+    transform: scale(1.05);
+}
+
+  

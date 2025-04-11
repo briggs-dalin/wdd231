@@ -22,28 +22,42 @@
         onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;700&display=swap">
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="icon" href="images/favicon.ico" sizes="48x48" type="image/ico">
 
     <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/leaderboard.css">
+    <script type="module" src="./scripts/modules/leaderboard.js"></script>
 </head>
+<header>
+    <nav class="navbar">
+        <a href="index.html" class="logo">🎮 GameHub</a>
+        <button id="menu-toggle" aria-label="Toggle menu">☰</button>
+        <ul class="nav-links" id="nav-links">
+            <li><a class="nav-a" href="index.html">Home</a></li>
+            <li><a class="nav-a active" href="leaderboard.html">Leaderboard</a></li>
+            <li><a class="nav-a" href="game.html">Click The Target</a></li>
+        </ul>
+    </nav>
+</header>
 <body>
     <h1>Game Leaderboard</h1>
 
-    <!-- Form to submit scores -->
+   
     <form id="score-form">
         <input type="text" id="player" placeholder="Your Name" required />
         <input type="number" id="score" placeholder="Your Score" required />
         <button type="submit">Submit Score</button>
     </form>
 
-    <!-- Leaderboard display -->
+  
     <div id="leaderboard">
         <h2>Leaderboard</h2>
         <ul id="leaderboard-list"></ul>
     </div>
 
     <script>
-        // Function to submit score to backend
+       
         document.getElementById('score-form').addEventListener('submit', async (e) => {
             e.preventDefault();
 
@@ -67,7 +81,7 @@
         });
 
         
-       // Function to fetch leaderboard data
+     
 const fetchLeaderboard = async () => {
     try {
         const response = await fetch('http://localhost:3000/leaderboard');
@@ -76,16 +90,16 @@ const fetchLeaderboard = async () => {
         }
         const data = await response.json();
         
-        // Log the full data structure to confirm it's as expected
+       
         console.log(data);
 
-        // Access the leaderboard entries from the correct structure
+        
         const leaderboardEntries = data.dreamlo.leaderboard.entry;
 
         const leaderboardList = document.getElementById('leaderboard-list');
         leaderboardList.innerHTML = '';  
         
-        // Check if there are any leaderboard entries
+       
         if (leaderboardEntries && leaderboardEntries.length > 0) {
             leaderboardEntries.forEach((entry) => {
                 const li = document.createElement('li');
@@ -104,5 +118,17 @@ const fetchLeaderboard = async () => {
 
 
 </script>
+    
+<section class="cta-to-play">
+    <h3>Think you can beat the top score?</h3>
+    <p>Test your reflexes and climb the leaderboard in our <br> fast-paced clicker game!</p>
+    <a href="game.html" class="play-button">🎯 Play Click the Target</a>
+</section>
+
 </body>
+<footer>
+    <p>&copy;<span id="currentyear">Lorem</span> Dalin Briggs |
+        Idaho</p>
+    <p id="lastModified">Lorem ipsum</p>
+</footer>
 </html>

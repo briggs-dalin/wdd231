@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="View top player scores in real time on our gaming leaderboard site!" />
+  <meta property="og:title" content="GameHub Leaderboard" />
+  <meta property="og:description" content="Check out who's topping the charts on GameHub!" />
+  <meta property="og:image" content="images/hero.webp" />
+  <meta property="og:url" content="https://briggs-dalin.github.io/wdd231/index.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/favicon.ico" sizes="48x48" type="image/ico">
+  <title>Click the Target - GameHub</title>
+  <link rel="stylesheet" href="./styles/game.css" />
+  <link rel="stylesheet" href="./styles/global.css">
+  <script defer src="./scripts/modules/game.js"></script>
+</head>
+
+<header>
+  <nav class="navbar">
+      <a href="index.html" class="logo">🎮 GameHub</a>
+      <button id="menu-toggle" aria-label="Toggle menu">☰</button>
+      <ul class="nav-links" id="nav-links">
+          <li><a class="nav-a" href="index.html">Home</a></li>
+          <li><a class="nav-a" href="leaderboard.html">Leaderboard</a></li>
+          <li><a class="nav-a active" href="game.html">Click The Target</a></li>
+      </ul>
+  </nav>
+</header>
+<body>
+  
+        
+  <div class="game-container">
+    <h1>Click the Target!</h1>
+    <p class="score">Score: <span id="score">0</span></p>
+    <p class="timer">Time Left: <span id="timer">30</span>s</p>
+    <div id="game-area"></div>
+    <button id="start-btn">Start Game</button>
+  </div>
+
+  
+  <footer>
+    <p>&copy;<span id="currentyear">Lorem</span> Dalin Briggs |
+        Idaho</p>
+    <p id="lastModified">Lorem ipsum</p>
+</footer>
+</body>
+</html>
