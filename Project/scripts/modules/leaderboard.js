@@ -59,7 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     } catch (error) {
       console.error('Error fetching leaderboard:', error);
-      alert('Error fetching leaderboard');
     }
   }
   
