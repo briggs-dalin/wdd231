@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
           alert(data.message || 'Score added successfully!');
           fetchLeaderboard(); // Refresh leaderboard
         } catch (error) {
-          alert('Error adding score');
           console.error(error);
         }
       });
@@ -59,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     } catch (error) {
       console.error('Error fetching leaderboard:', error);
+      alert('Error fetching leaderboard');
     }
   }
   
